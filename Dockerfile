@@ -24,6 +24,7 @@ RUN apt-get install -y tzdata && \
     ssh \
     sudo \
     vim \
+    nodejs \
    rclone \
    fuse \
     && rm -rf /var/lib/apt/lists/*
@@ -32,6 +33,7 @@ RUN apt-get install -y tzdata && \
 
   RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
   && locale-gen
+
 ENV LANG=en_US.UTF-8
 
 RUN chsh -s /bin/bash
